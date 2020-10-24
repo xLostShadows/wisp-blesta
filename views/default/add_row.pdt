@@ -1,0 +1,57 @@
+<?php
+        $this->Widget->clear();
+        $this->Widget->setLinkButtons([]);
+        $this->Widget->create($this->_('Wisp.add_row.box_title', true));
+        ?>
+        <div class="inner">
+            <?php
+            $this->Form->create();
+            ?>
+            <div class="title_row first">
+                <h3><?php $this->_('Wisp.add_row.basic_title');?></h3>
+            </div>
+            <div class="pad">
+                <ul>
+                    <li>
+                        <?php
+                        $this->Form->label($this->_('Wisp.row_meta.server_name', true), 'server_name');
+                        $this->Form->fieldText('server_name', $this->Html->ifSet($vars->server_name), ['id' => 'server_name']);
+                        ?>
+                    </li>
+                    <li>
+                        <?php $this->Form->label($this->_('Wisp.row_meta.host_name', true), 'host_name', ['class' => 'inline']);?>
+                        <span class="tooltip block"><?php $this->_('AppController.tooltip.text');?><div><?php $this->_('Wisp.!tooltip.host_name');?></div></span>
+                        <?php $this->Form->fieldText('host_name', $this->Html->ifSet($vars->host_name), ['id' => 'host_name', 'class' => 'block']);?>
+                    </li>
+                    <li>
+                        <?php $this->Form->label($this->_('Wisp.row_meta.account_api_key', true), 'account_api_key', ['class' => 'inline']);?>
+                        <span class="tooltip block"><?php $this->_('AppController.tooltip.text');?><div><?php $this->_('Wisp.!tooltip.account_api_key');?></div></span>
+                        <?php $this->Form->fieldText('account_api_key', $this->Html->ifSet($vars->account_api_key), ['id' => 'account_api_key', 'class' => 'block']);?>
+                    </li>
+                    <li>
+                        <?php $this->Form->label($this->_('Wisp.row_meta.application_api_key', true), 'application_api_key', ['class' => 'inline']);?>
+                        <span class="tooltip block"><?php $this->_('AppController.tooltip.text');?><div><?php $this->_('Wisp.!tooltip.application_api_key');?></div></span>
+                        <?php $this->Form->fieldText('application_api_key', $this->Html->ifSet($vars->application_api_key), ['id' => 'application_api_key', 'class' => 'block']);?>
+                    </li>
+                    <li>
+                        <?php
+                        $this->Form->fieldCheckbox('use_ssl', 'true', $this->Html->ifSet($vars->use_ssl, 'true') == 'true', ['id'=>'use_ssl']);
+                        $this->Form->label($this->_('Wisp.row_meta.use_ssl', true), 'use_ssl', ['class' => 'inline']);
+                        ?>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="button_row">
+                <?php
+                $this->Form->fieldSubmit('save', $this->_('Wisp.add_row.add_btn', true), ['class' => 'btn btn-primary pull-right']);
+                ?>
+            </div>
+            <?php
+            $this->Form->end();
+            ?>
+        </div>
+        <?php
+        $this->Widget->end();
+        ?>

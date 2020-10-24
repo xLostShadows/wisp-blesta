@@ -1,0 +1,25 @@
+{
+    "version": "1.0.3",
+    "name": "Wisp.name",
+    "description": "Wisp.description",
+    "authors": [
+        {
+            "name": "HostBend LLC",
+            "url": "https://hostbend.com"
+        }
+    ],
+    "service": {
+        "name_key": "server_name"
+    },
+    "module": {
+        "row": "Wisp.module_row",
+        "rows": "Wisp.module_row_plural",
+        "row_key": "server_name",
+        "group": "Wisp.module_group"
+    },
+    "email_tags": {
+        "module": ["server_name", "host_name"],
+        "package": ["location_id", "nest_id", "egg_id", "image"],
+        "service": ["server_name", "server_ip", "server_port", "server_username", "server_password"]
+    }
+}
