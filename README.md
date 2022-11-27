@@ -1,3 +1,5 @@
+# This module is not being actively maintained. Due to recent API changes in WiSP, this module may not function correctly. Use at your own risk.
+
 # WiSP Module
 
 This is a module for Blesta that integrates with [WiSP](https://wisp.gg/).
