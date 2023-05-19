@@ -164,7 +164,7 @@ class Wisp extends Module
         $parent_service = null,
         $status = 'pending'
     ) {
-        Loader::loadModels($this, ['ModuleClientMeta']);
+        Loader::loadModels($this, ['ModuleClientMeta,Clients']);
 
         $meta = [];
         // Load egg
@@ -187,7 +187,9 @@ class Wisp extends Module
         $service_helper = new WispService();
         if ($vars['use_module'] == 'true') {
             // Load/create user account
-            $wisp_user = $this->apiRequest('Users', 'getByExternalID', ['bl-' . $vars['client_id']]);
+            $client = $this->Clients->get($vars['client_id'] ?? null);
+            $wisp_user = $this->apiRequest('Users', 'getByEmail', [$client->email]);
+            $wisp_user = !empty($wisp_user->data) ? reset($wisp_user->data) : null;
 
             $module = $this->getModule();
 
