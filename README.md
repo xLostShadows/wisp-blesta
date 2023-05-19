@@ -1,4 +1,4 @@
-# This module is not being actively maintained. Due to recent API changes in WiSP, this module may not function correctly. Use at your own risk.
+# Fork of the Blesta WiSP module. Made compatible for hosts not using External IDs, or instances where the WiSP API Call does not return the Blesta client's full client ID.
 
 # WiSP Module
 
